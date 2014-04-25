@@ -1,2 +1,2 @@
-apigee-analytics-pack
+Apigee Analytics Pack
 =====================
