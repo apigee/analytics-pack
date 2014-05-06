@@ -15,18 +15,15 @@ def run():
     username = None
     password = None
     organization = None
-    action = None
     zip_file = None
     force_update = False
-    options = 'o:a:u:p:b:l:z:h:f'
+    options = 'o:u:p:b:l:z:h:f'
 
     opts = getopt.getopt(sys.argv[1:], options)[0]
 
     for o in opts:
         if o[0] == '-o':
             organization = o[1]
-        elif o[0] == '-a':
-            action = o[1]
         elif o[0] == '-u':
             username = o[1]
         elif o[0] == '-p':
@@ -48,12 +45,6 @@ def run():
     if password is None:
         badusage = True
         print '-p is required'
-    if action is None:
-        badusage = True
-        print '-a is required'
-    if action != 'deployreporttemplates':
-        badusage = True
-        print 'Provided action is not supported. Supported actions are deployreporttemplates'
     if organization is None:
         badusage = True
         print '-o is required'
@@ -212,11 +203,10 @@ def path_contains_dot(p):
 
 
 def print_usage():
-    print 'Usage: apigeeanalytics -a [action] -o [organization]'
+    print 'Usage: apigeeanalytics -o [organization]'
     print '         -u [username] -p [password]'
     print '         -l [apigee API url] -z [zip file] -h'
     print ''
-    print '-a Action for Apigee analytics. (Supported actions are deployreporttemplates)'
     print '-o Apigee organization name'
     print '-u Apigee user name'
     print '-p Apigee password'
