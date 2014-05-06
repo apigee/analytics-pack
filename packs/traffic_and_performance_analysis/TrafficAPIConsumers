@@ -1,0 +1,36 @@
+{
+    "chartType": "line",
+    "comments": [],
+    "dimensions": [
+        "apiproxy",
+        "developer",
+        "developer_app"
+    ],
+    "displayName": "TrafficAPIConsumers",
+    "environment": "prod",
+    "metrics": [
+        {
+            "function": "sum",
+            "name": "message_count"
+        }
+    ],
+    "properties": [
+        {
+            "property": "__ui__",
+            "value": [
+                {
+                    "name": "description",
+                    "value": "A product owners view of traffic"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "sortbyCols": [],
+    "tags": [],
+    "timeDuration": "1dy",
+    "timeUnit": "hour"
+}

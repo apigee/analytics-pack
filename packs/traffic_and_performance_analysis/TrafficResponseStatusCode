@@ -1,0 +1,35 @@
+{
+    "chartType": "line",
+    "comments": [],
+    "dimensions": [
+        "response_status_code",
+        "apiproxy"
+    ],
+    "displayName": "TrafficResponseStatusCode",
+    "environment": "prod",
+    "metrics": [
+        {
+            "function": "sum",
+            "name": "message_count"
+        }
+    ],
+    "properties": [
+        {
+            "property": "__ui__",
+            "value": [
+                {
+                    "name": "description",
+                    "value": "A support / ops developer view of API Traffic"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "sortbyCols": [],
+    "tags": [],
+    "timeDuration": "1dy",
+    "timeUnit": "hour"
+}

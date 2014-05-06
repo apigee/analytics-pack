@@ -1,0 +1,45 @@
+{
+    "chartType": "line",
+    "comments": [],
+    "createdAt": 1398354186910,
+    "createdBy": "noreply_admin@apigee.com",
+    "dimensions": [
+        "apiproxy"
+    ],
+    "displayName": "Cache Utilization Report",
+    "environment": "prod",
+    "lastModifiedAt": 1398715017877,
+    "lastModifiedBy": "noreply_admin@apigee.com",
+    "lastViewedAt": 1398715062003,
+    "metrics": [
+        {
+            "function": "sum",
+            "name": "message_count"
+        },
+        {
+            "function": "sum",
+            "name": "cache_hit"
+        }
+    ],
+    "name": "a8875b23-e5b2-4525-8769-d9aa4f7bbd28",
+    "organization": "ft",
+    "properties": [
+        {
+            "property": "__ui__",
+            "value": [
+                {
+                    "name": "description",
+                    "value": "A view of cache utilization compared to  traffic"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "sortbyCols": [],
+    "tags": [],
+    "timeDuration": "1wk",
+    "timeUnit": "hour"
+}

@@ -1,0 +1,43 @@
+{
+    "chartType": "line",
+    "comments": [],
+    "dimensions": [
+        "apiproxy",
+        "proxy_pathsuffix"
+    ],
+    "displayName": "LatencyReqRes",
+    "environment": "prod",
+    "metrics": [
+        {
+            "function": "avg",
+            "name": "total_response_time"
+        },
+        {
+            "function": "avg",
+            "name": "request_processing_latency"
+        },
+        {
+            "function": "avg",
+            "name": "response_processing_latency"
+        }
+    ],
+    "properties": [
+        {
+            "property": "__ui__",
+            "value": [
+                {
+                    "name": "description",
+                    "value": "A support / ops developers view to troubleshoot API performance issues"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "sortbyCols": [],
+    "tags": [],
+    "timeDuration": "1dy",
+    "timeUnit": "hour"
+}

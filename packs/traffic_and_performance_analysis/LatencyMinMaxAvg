@@ -1,0 +1,44 @@
+{
+    "chartType": "line",
+    "comments": [],
+    "dimensions": [
+        "apiproxy",
+        "request_verb",
+        "proxy_pathsuffix"
+    ],
+    "displayName": "LatencyMinMaxAvg",
+    "environment": "prod",
+    "metrics": [
+        {
+            "function": "avg",
+            "name": "total_response_time"
+        },
+        {
+            "function": "min",
+            "name": "total_response_time"
+        },
+        {
+            "function": "max",
+            "name": "total_response_time"
+        }
+    ],
+    "properties": [
+        {
+            "property": "__ui__",
+            "value": [
+                {
+                    "name": "description",
+                    "value": "An API Developers view of API performance"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "sortbyCols": [],
+    "tags": [],
+    "timeDuration": "1dy",
+    "timeUnit": "hour"
+}
