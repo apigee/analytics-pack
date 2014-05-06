@@ -3,26 +3,28 @@
     "comments": [],
     "dimensions": [
         "apiproxy",
-        "request_verb",
+        "response_status_code",
         "proxy_pathsuffix"
     ],
-    "displayName": "TrafficAD",
+    "displayName": "ErrorsAD",
     "environment": "prod",
     "metrics": [
         {
             "function": "sum",
-            "name": "message_count"
+            "name": "is_error"
+        },
+        {
+            "function": "sum",
+            "name": "target_error"
         }
     ],
-    "name": "000ffc43-e257-46ee-99fc-bfec2383921e",
-    "organization": "ft",
     "properties": [
         {
             "property": "__ui__",
             "value": [
                 {
                     "name": "description",
-                    "value": "An API Developers view of traffic"
+                    "value": "An API Developers view of errors"
                 },
                 {
                     "name": "accuracy",

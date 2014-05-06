@@ -2,35 +2,27 @@
     "chartType": "line",
     "comments": [],
     "dimensions": [
-        "apiproxy",
-        "request_verb",
-        "proxy_pathsuffix"
+        "apiproxy"
     ],
-    "displayName": "LatencyAD",
+    "displayName": "LatencyVsTraffic",
     "environment": "prod",
     "metrics": [
         {
+            "function": "sum",
+            "name": "message_count"
+        },
+        {
             "function": "avg",
-            "name": "total_response_time"
-        },
-        {
-            "function": "min",
-            "name": "total_response_time"
-        },
-        {
-            "function": "max",
             "name": "total_response_time"
         }
     ],
-    "name": "93cca070-59a6-48c8-8dbd-f0ebebc4c4a5",
-    "organization": "ft",
     "properties": [
         {
             "property": "__ui__",
             "value": [
                 {
                     "name": "description",
-                    "value": "An API Developers view of API performance"
+                    "value": "A Product Managers view of API performance"
                 },
                 {
                     "name": "accuracy",

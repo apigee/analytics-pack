@@ -3,9 +3,10 @@
     "comments": [],
     "dimensions": [
         "apiproxy",
+        "request_verb",
         "proxy_pathsuffix"
     ],
-    "displayName": "LatencyOps2",
+    "displayName": "LatencyMinMaxAvg",
     "environment": "prod",
     "metrics": [
         {
@@ -13,23 +14,21 @@
             "name": "total_response_time"
         },
         {
-            "function": "avg",
-            "name": "request_processing_latency"
+            "function": "min",
+            "name": "total_response_time"
         },
         {
-            "function": "avg",
-            "name": "response_processing_latency"
+            "function": "max",
+            "name": "total_response_time"
         }
     ],
-    "name": "a7a0fc2c-8b85-4c42-b667-a738a6222cf1",
-    "organization": "ft",
     "properties": [
         {
             "property": "__ui__",
             "value": [
                 {
                     "name": "description",
-                    "value": "A support / ops developers view to troubleshoot API performance issues"
+                    "value": "An API Developers view of API performance"
                 },
                 {
                     "name": "accuracy",

@@ -2,25 +2,24 @@
     "chartType": "line",
     "comments": [],
     "dimensions": [
+        "response_status_code",
         "apiproxy"
     ],
-    "displayName": "LatencyPM",
+    "displayName": "TrafficResponseStatusCode",
     "environment": "prod",
     "metrics": [
         {
-            "function": "avg",
-            "name": "total_response_time"
+            "function": "sum",
+            "name": "message_count"
         }
     ],
-    "name": "b8e4be57-e7c2-4808-9409-96547fea6384",
-    "organization": "ft",
     "properties": [
         {
             "property": "__ui__",
             "value": [
                 {
                     "name": "description",
-                    "value": "A Product Managers view of API performance"
+                    "value": "A support / ops developer view of API Traffic"
                 },
                 {
                     "name": "accuracy",

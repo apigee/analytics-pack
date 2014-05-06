@@ -4,7 +4,7 @@
     "dimensions": [
         "apiproxy"
     ],
-    "displayName": "ErrorsPM",
+    "displayName": "ErrorsVsTraffic",
     "environment": "prod",
     "metrics": [
         {
@@ -16,8 +16,6 @@
             "name": "is_error"
         }
     ],
-    "name": "0be428e4-50da-4851-899e-9ffb7047631e",
-    "organization": "ft",
     "properties": [
         {
             "property": "__ui__",
