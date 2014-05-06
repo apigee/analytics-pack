@@ -1,0 +1,37 @@
+{
+    "chartType": "line",
+    "comments": [],
+    "dimensions": [
+        "response_status_code",
+        "apiproxy"
+    ],
+    "displayName": "TrafficOps",
+    "environment": "prod",
+    "metrics": [
+        {
+            "function": "sum",
+            "name": "message_count"
+        }
+    ],
+    "name": "10a4a93a-fd0a-45ca-b6b0-67c377e80c99",
+    "organization": "ft",
+    "properties": [
+        {
+            "property": "__ui__",
+            "value": [
+                {
+                    "name": "description",
+                    "value": "A support / ops developer view of API Traffic"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "sortbyCols": [],
+    "tags": [],
+    "timeDuration": "1dy",
+    "timeUnit": "hour"
+}

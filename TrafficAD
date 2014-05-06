@@ -1,0 +1,38 @@
+{
+    "chartType": "line",
+    "comments": [],
+    "dimensions": [
+        "apiproxy",
+        "request_verb",
+        "proxy_pathsuffix"
+    ],
+    "displayName": "TrafficAD",
+    "environment": "prod",
+    "metrics": [
+        {
+            "function": "sum",
+            "name": "message_count"
+        }
+    ],
+    "name": "000ffc43-e257-46ee-99fc-bfec2383921e",
+    "organization": "ft",
+    "properties": [
+        {
+            "property": "__ui__",
+            "value": [
+                {
+                    "name": "description",
+                    "value": "An API Developers view of traffic"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "sortbyCols": [],
+    "tags": [],
+    "timeDuration": "1dy",
+    "timeUnit": "hour"
+}

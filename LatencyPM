@@ -1,0 +1,36 @@
+{
+    "chartType": "line",
+    "comments": [],
+    "dimensions": [
+        "apiproxy"
+    ],
+    "displayName": "LatencyPM",
+    "environment": "prod",
+    "metrics": [
+        {
+            "function": "avg",
+            "name": "total_response_time"
+        }
+    ],
+    "name": "b8e4be57-e7c2-4808-9409-96547fea6384",
+    "organization": "ft",
+    "properties": [
+        {
+            "property": "__ui__",
+            "value": [
+                {
+                    "name": "description",
+                    "value": "A Product Managers view of API performance"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "sortbyCols": [],
+    "tags": [],
+    "timeDuration": "1dy",
+    "timeUnit": "hour"
+}

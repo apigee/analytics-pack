@@ -1,0 +1,40 @@
+{
+    "chartType": "line",
+    "comments": [],
+    "dimensions": [
+        "apiproxy"
+    ],
+    "displayName": "ErrorsPM",
+    "environment": "prod",
+    "metrics": [
+        {
+            "function": "sum",
+            "name": "message_count"
+        },
+        {
+            "function": "sum",
+            "name": "is_error"
+        }
+    ],
+    "name": "0be428e4-50da-4851-899e-9ffb7047631e",
+    "organization": "ft",
+    "properties": [
+        {
+            "property": "__ui__",
+            "value": [
+                {
+                    "name": "description",
+                    "value": "A Product Managers view of API errors"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "sortbyCols": [],
+    "tags": [],
+    "timeDuration": "1dy",
+    "timeUnit": "hour"
+}
