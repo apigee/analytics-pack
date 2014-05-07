@@ -3,7 +3,6 @@ import urllib2
 import re
 import sys
 import json
-import unicodedata
 from zipfile import ZipFile
 
 provisioned_reports_for_org = None
@@ -15,7 +14,7 @@ def run():
     username = None
     password = None
     organization = None
-    zip_file = None
+    input_file = None
     force_update = False
     options = 'o:u:p:b:l:z:h:f'
 
@@ -31,7 +30,7 @@ def run():
         elif o[0] == '-l':
             apigee_url = o[1]
         elif o[0] == '-z':
-            zip_file = o[1]
+            input_file = o[1]
         elif o[0] == '-f':
             force_update = True
         elif o[0] == '-h':
@@ -48,7 +47,7 @@ def run():
     if organization is None:
         badusage = True
         print '-o is required'
-    if zip_file is None:
+    if input_file is None:
         badusage = True
         print '-z is required'
 
@@ -56,27 +55,46 @@ def run():
         print_usage()
         sys.exit(1)
 
-    input_zip = ZipFile(zip_file)
-    for file_name in input_zip.namelist():
+    if input_file.endswith('.json'):
         try:
-            print 'processing file ' + file_name + '...'
-            file_content = input_zip.read(file_name)
-            report_name = get_report_name(json.JSONDecoder().decode(file_content))
-            if report_name is None:
-                print 'unable to retrieve the report name from the file'
-                return None
-            elif not already_provisioned(report_name, organization, username, password, apigee_url):
-                provision_report_template(report_name, file_content, organization, username, password, apigee_url)
-            else:
-                print 'report ' + report_name + ' already provisioned'
-                if force_update:
-                    print 'creating new report '+report_name
-                    provision_report_template(report_name, file_content, organization, username, password, apigee_url)
-                    delete_old_report(report_name, organization, username, password, apigee_url)
-
+            file_content = open(input_file, 'r').read()
+            return handle_single_file(file_content, organization, username, password, apigee_url, force_update)
         except Exception, e:
+            print 'unable to read the input file '+input_file
             print e
-            print 'provisioning file '+file_name+' failed'
+    elif input_file.endswith('.zip'):
+        try:
+            input_zip = ZipFile(input_file)
+        except Exception, e:
+            print 'unable to read the input file ' + input_file
+            print e
+            sys.exit(1)
+        for file_name in input_zip.namelist():
+            try:
+                print 'processing file ' + file_name + '...'
+                file_content = input_zip.read(file_name)
+                return handle_single_file(file_content, organization, username, password, apigee_url, force_update)
+            except Exception, e:
+                print e
+                print 'provisioning file ' + file_name + ' failed'
+    else:
+        print 'Invalid option for -z. Supported formats for Input File are zip and json'
+
+
+def handle_single_file(file_content, organization, username, password, apigee_url, force_update):
+    report_name = get_report_name(json.JSONDecoder().decode(file_content))
+    if report_name is None:
+        print 'unable to retrieve the report name from the file'
+        return None
+    elif not already_provisioned(report_name, organization, username, password, apigee_url):
+        provision_report_template(report_name, file_content, organization, username, password, apigee_url)
+    else:
+        print 'report ' + report_name + ' already provisioned'
+        if force_update:
+            print 'creating new report ' + report_name
+            provision_report_template(report_name, file_content, organization, username, password, apigee_url)
+            delete_old_report(report_name, organization, username, password, apigee_url)
+
 
 def already_provisioned(report_name, organization, username, password, apigee_url):
     global provisioned_reports_for_org
@@ -87,6 +105,7 @@ def already_provisioned(report_name, organization, username, password, apigee_ur
     if provisioned_reports_for_org is not None:
         return check_if_report_name_matches(report_name, provisioned_reports_for_org)
     return False
+
 
 def delete_old_report(report_name, organization, username, password, apigee_url):
     print 'deleting old report '+report_name
@@ -114,6 +133,7 @@ def delete_old_report(report_name, organization, username, password, apigee_url)
                 print 'error while deleting report ' + report_name + ' .error is '+e
         else:
             print 'report uuid is not available. cannot delete old report'
+
 
 # gets the reports definitions for an org
 def get_report_definitions_for_org(org, username, password, apigee_url):
@@ -163,6 +183,7 @@ def get_uuid_of_report(report_name, list_of_reports):
                             print "found older format. skipping.."
     return None
 
+
 def check_if_report_name_matches(report_name, list_of_reports):
     if list_of_reports is not None:
         for item, itemVal in list_of_reports.iteritems():
@@ -211,7 +232,7 @@ def print_usage():
     print '-u Apigee user name'
     print '-p Apigee password'
     print '-l Apigee API URL (optional, defaults to https://api.enterprise.apigee.com/v1)'
-    print '-z ZIP file to save'
+    print '-z zip/json file to save'
     print '-f flag to force update a report (In case a report with same name already exists.)'
     print '-h Print this message'
 
