@@ -84,7 +84,7 @@ def run():
 def handle_single_file(file_content, organization, username, password, apigee_url, force_update):
     report_name = get_report_name(json.JSONDecoder().decode(file_content))
     if report_name is None:
-        print 'unable to retrieve the report name from the file'
+        print 'unable to retrieve the report name from the file. add report name in the tags section'
         return None
     elif not already_provisioned(report_name, organization, username, password, apigee_url):
         provision_report_template(report_name, file_content, organization, username, password, apigee_url)
