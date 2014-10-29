@@ -29,7 +29,7 @@
         }
     ],
     "sortbyCols": [],
-    "tags": [],
+    "tags": ["TrafficResponseStatusCode"],
     "timeDuration": "1dy",
     "timeUnit": "hour"
 }

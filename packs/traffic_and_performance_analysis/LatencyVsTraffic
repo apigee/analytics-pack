@@ -32,7 +32,7 @@
         }
     ],
     "sortbyCols": [],
-    "tags": [],
+    "tags": ["LatencyVsTraffic"],
     "timeDuration": "1dy",
     "timeUnit": "hour"
 }

@@ -37,7 +37,7 @@
         }
     ],
     "sortbyCols": [],
-    "tags": [],
+    "tags": ["LatencyReqRes"],
     "timeDuration": "1dy",
     "timeUnit": "hour"
 }

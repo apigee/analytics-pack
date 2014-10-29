@@ -73,7 +73,7 @@ def run():
             try:
                 print 'processing file ' + file_name + '...'
                 file_content = input_zip.read(file_name)
-                return handle_single_file(file_content, organization, username, password, apigee_url, force_update)
+                handle_single_file(file_content, organization, username, password, apigee_url, force_update)
             except Exception, e:
                 print e
                 print 'provisioning file ' + file_name + ' failed'

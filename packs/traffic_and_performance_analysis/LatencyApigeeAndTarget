@@ -36,7 +36,7 @@
         }
     ],
     "sortbyCols": [],
-    "tags": [],
+    "tags": ["LatencyApigeeAndTarget"],
     "timeDuration": "1dy",
     "timeUnit": "hour"
 }

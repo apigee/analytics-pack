@@ -30,7 +30,7 @@
         }
     ],
     "sortbyCols": [],
-    "tags": [],
+    "tags": ["TrafficAPIConsumers"],
     "timeDuration": "1dy",
     "timeUnit": "hour"
 }

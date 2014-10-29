@@ -38,7 +38,7 @@
         }
     ],
     "sortbyCols": [],
-    "tags": [],
+    "tags": ["LatencyMinMaxAvg"],
     "timeDuration": "1dy",
     "timeUnit": "hour"
 }

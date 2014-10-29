@@ -32,7 +32,7 @@
         }
     ],
     "sortbyCols": [],
-    "tags": [],
+    "tags": ["ErrorsVsTraffic"],
     "timeDuration": "1dy",
     "timeUnit": "hour"
 }

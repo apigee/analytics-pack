@@ -30,7 +30,7 @@
         }
     ],
     "sortbyCols": [],
-    "tags": [],
+    "tags": ["Traffic"],
     "timeDuration": "1dy",
     "timeUnit": "hour"
 }
